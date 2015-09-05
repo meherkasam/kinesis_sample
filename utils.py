@@ -13,3 +13,7 @@ def read_json(file_path):
 	with open(file_path) as data_file:
 		data = json.load(data_file)
 	return data
+	
+def append_output(data, file_path):
+	with open(file_path, "a") as output_file:
+		output_file.write(json.dumps(data))

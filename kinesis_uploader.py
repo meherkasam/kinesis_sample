@@ -9,5 +9,5 @@ class KinesisUploader:
 	def upload(self, data_rows):
 		# TODO: Start this on a different thread
 		for row in data_rows:
-			response = self._client.put_record(StreamName=constants.KINESIS_STREAM_NAME, Data=json.dumps(row), PartitionKey="SamplePartition")
+			response = self._client.put_record(StreamName=constants.KINESIS_STREAM_NAME, Data=json.dumps(row), PartitionKey=constants.PARTITION_KEY)
 			#print response if you want to see output from AWS

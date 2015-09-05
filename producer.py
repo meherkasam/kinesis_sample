@@ -3,9 +3,6 @@ import constants
 import directory_monitor
 import kinesis_uploader
 import utils
-
-def uploadToKinesis(files):
-	print kinesis_client.list_streams()
 		
 def start():
 	kinesis_client = boto3.client("kinesis", region_name=constants.REGION)
