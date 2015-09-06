@@ -25,7 +25,7 @@ class StreamMonitor:
 			self._iterators.append(self.__get_sharditerator_forid(i))
 		
 	def __get_sharditerator_forid(self, i):
-		return self._client.get_shard_iterator(StreamName=constants.KINESIS_STREAM_NAME, ShardId=i, ShardIteratorType='LATEST')["ShardIterator"]
+		return self._client.get_shard_iterator(StreamName=constants.KINESIS_STREAM_NAME, ShardId=i, ShardIteratorType='TRIM_HORIZON')["ShardIterator"]
 	
 	def __init__(self, client, interval):
 		self._client = client
